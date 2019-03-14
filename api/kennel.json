@@ -1,0 +1,95 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Jessica Younker"
+    },
+    {
+      "name": "Matt Rowe",
+      "favoriteBand": "Rufus",
+      "employeeId": null,
+      "id": 3
+    },
+    {
+      "name": "Jenni Snead",
+      "favoriteBand": "Styx",
+      "employeeId": null,
+      "id": 4
+    },
+    {
+      "name": "BuddyGuy, Nyotyour",
+      "favoriteBand": "Joni Mitchell",
+      "employeeId": null,
+      "id": 5
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Nashville North",
+      "address": "500 Circle Way"
+    },
+    {
+      "id": 2,
+      "name": "Nashville South",
+      "address": "10101 Binary Court"
+    }
+  ],
+  "animals": [
+    {
+      "id": 1,
+      "name": "Nina"
+    },
+    {
+      "name": "Darkness",
+      "breed": "Alabama Black Snake",
+      "employeeId": 2,
+      "id": 3
+    },
+    {
+      "id": 6,
+      "name": "Jojo Biden",
+      "breed": "Presidential Candidate",
+      "employeeId": 3
+    },
+    {
+      "name": "Jack",
+      "breed": "Barkologist",
+      "employeeId": 3,
+      "id": 7
+    },
+    {
+      "id": 8,
+      "name": "Baxter 3",
+      "breed": "Buckeye",
+      "employeeId": 1
+    }
+  ],
+  "owners": [
+    {
+      "id": 1,
+      "name": "God",
+      "phoneNumber": "1-800-1TRUGOD"
+    },
+    {
+      "id": 2,
+      "name": "The Alien from the film Alien",
+      "phoneNumber": "*&#-!#$&(*-$&(*"
+    },
+    {
+      "id": 3,
+      "name": "Stack of children pretending to be an adult",
+      "phoneNumber": "304-555-5555"
+    },
+    {
+      "id": 4,
+      "name": "Cardboard cut-out of acclaimed rapper Rick Ross",
+      "phoneNumber": "304-444-4444"
+    },
+    {
+      "name": "Cynthia Ownershmidt",
+      "animalId": null,
+      "id": 5
+    }
+  ]
+}
