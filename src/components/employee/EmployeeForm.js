@@ -1,12 +1,18 @@
 import React, { Component } from "react";
 import "../animal/Animal.css";
+import EmployeeManager from "../../modules/EmployeeManager";
 
 export default class EmployeeForm extends Component {
   // Set initial state when animalForms renders.
   state = {
-    employeeName: "",
+    name: "",
     favoriteBand: "",
-    employeeId: ""
+    employeeId: "",
+    email: "",
+    password: "",
+    passwordConfirm: "",
+    error: ""
+
   };
 
   // Update state whenever an input field is edited
@@ -25,50 +31,83 @@ export default class EmployeeForm extends Component {
      */
   constructNewEmployee = evt => {
     evt.preventDefault();
-    if (this.state.favoriteBand === "") {
-      window.alert("You're an adult and you should have a favorite band.");
-    } else {
-      const employee = {
-        name: this.state.employeeName,
-        favoriteBand: this.state.favoriteBand,
-        // Make sure the employeeId is saved to the database as a number since it is a foreign key.
-        employeeId: parseInt(this.state.employeeId)
-      };
-
-      // Create the animal and redirect user to animal list
-      this.props
-        .addEmployee(employee)
-        .then(() => this.props.history.push("/employees"));
+    if (this.state.password !== this.state.passwordConfirm) {
+      const errorMessage ="Your passwords didn't match. Please try harder.";
+      this.setState({ errorMessage: errorMessage});
+      return null;
+      // returning null just bumps us out of the function so the rest of it doesnt' run.
     }
-  };
+
+      const employeeToPost = {
+        name: this.state.name,
+        favoriteBand: this.state.favoriteBand,
+        email: this.state.email,
+        password: this.state.password
+      };
+        // Make sure the employeeId is saved to the database as a number since it is a foreign key.
+
+
+
+     EmployeeManager.getByEmail(this.state.email).then(employee => {
+       if(employee.length > 0) {console.log(employee)
+         const errorMessage =
+         "We're sorry, that email already exists. Would you like to log in instead?";
+         this.setState({errorMessage: errorMessage});
+       } else {
+         this.props.registerEmployee(employeeToPost).then(employee => {console.log(employee);
+        sessionStorage.setItem("credentials", JSON.stringify(employee.id));
+        this.props.history.push("/");
+        this.props.refreshEmployees(); //this function is in our ApplicationViews component
+        });
+       }
+     });
+    };
 
   render() {
     return (
       <React.Fragment>
-        <form className="animalForm">
+        <form className="employeeForm">
           <div className="form-group">
-            <label htmlFor="animalName">Employee name</label>
+            <label htmlFor="name">Name</label>
             <input
               type="text"
               required
               className="form-control"
               onChange={this.handleFieldChange}
               id="employeeName"
-              placeholder="Employee name"
             />
           </div>
           <div className="form-group">
-            <label htmlFor="favoriteBand">Favorite Band</label>
+            <label htmlFor="email">Email</label>
             <input
-              type="text"
+              type="email"
               required
               className="form-control"
               onChange={this.handleFieldChange}
-              id="favoriteBand"
-              placeholder="The Talking Heads"
+              id="email"
             />
           </div>
-
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              className="form-control"
+              onChange={this.handleFieldChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="passwordConfirm">Confirm Password</label>
+            <input
+              type="password"
+              name="passwordConfirm"
+              id="passwordConfirm"
+              className="form-control"
+              onChange={this.handleFieldChange}
+            />
+          </div>
+          <h4>{this.state.errorMessage}</h4>
           <button
             type="submit"
             onClick={this.constructNewEmployee}

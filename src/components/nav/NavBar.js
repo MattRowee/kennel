@@ -4,6 +4,12 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 
 export default class NavBar extends Component {
+        // When they click the logout button, clear both local and session storage
+  logout() {
+    sessionStorage.clear();
+    localStorage.clear();
+  }
+
     render() {
         return (
             <nav className="navbar navbar-light fixed-top light-blue flex-md-nowrap p-0 shadow">

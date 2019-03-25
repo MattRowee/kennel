@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import AnimalManager from "../../modules/AnimalManager"
 
+// setting state.. what does that really mean? defining the keys of the object?
 export default class AnimalEditForm extends Component {
     // Set initial state
     state = {
@@ -9,13 +10,18 @@ export default class AnimalEditForm extends Component {
       employeeId: ""
     }
 
-
+// this is a function that changes the state of the target, setting it to the target value.
+// a neccessary function for editing. See if you can find this function in other modules on the app.
+// it is called after the method [[onChange]] further down in the render function
     handleFieldChange = evt => {
         const stateToChange = {}
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
     }
-
+// updateExistingAnimal is all the crap that runs when you update your animal.
+// Prevent default prevents the function from running... you don't really understand it's functionality
+// if the inputs are all filled in, creates edited animal and runs the update animal function with
+// the edited animal object
     updateExistingAnimal = evt => {
       evt.preventDefault()
 
@@ -34,7 +40,7 @@ export default class AnimalEditForm extends Component {
     .then(() => this.props.history.push("/animals"))
     }
   }
-
+// dont really understand this.
     componentDidMount() {
       AnimalManager.get(this.props.match.params.animalId)
       .then(animal => {
@@ -46,7 +52,7 @@ export default class AnimalEditForm extends Component {
       });
     }
 
-
+// actual generation/rendering of the edit form
     render() {
       return (
         <React.Fragment>

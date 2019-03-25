@@ -1,54 +1,62 @@
 {
   "employees": [
     {
-      "id": 1,
-      "name": "Jessica Younker"
-    },
-    {
       "name": "Matt Rowe",
       "favoriteBand": "Rufus",
       "employeeId": null,
-      "id": 3
+      "id": 3,
+      "image": "https://i.ytimg.com/vi/vK-mAwKMxQg/maxresdefault.jpg",
+      "email": "m@m",
+      "password": "m"
     },
     {
       "name": "Jenni Snead",
       "favoriteBand": "Styx",
       "employeeId": null,
-      "id": 4
+      "id": 4,
+      "image": "https://i.ytimg.com/vi/vK-mAwKMxQg/maxresdefault.jpg",
+      "email": "js@js",
+      "password": "js"
     },
     {
-      "name": "BuddyGuy, Nyotyour",
-      "favoriteBand": "Joni Mitchell",
+      "name": "Joe",
+      "favoriteBand": "Dolly Parton",
       "employeeId": null,
-      "id": 5
+      "id": 6,
+      "image": "https://i.ytimg.com/vi/vK-mAwKMxQg/maxresdefault.jpg",
+      "email": "joe@joe",
+      "password": "joe"
     }
   ],
   "locations": [
     {
       "id": 1,
       "name": "Nashville North",
-      "address": "500 Circle Way"
+      "address": "500 Circle Way",
+      "image": "http://www.hcs.harvard.edu/~ichthus/wordpress/wp-content/uploads/2013/04/The-Tower-of-Babel.jpg"
     },
     {
       "id": 2,
       "name": "Nashville South",
-      "address": "10101 Binary Court"
+      "address": "10101 Binary Court",
+      "image": "http://www.hcs.harvard.edu/~ichthus/wordpress/wp-content/uploads/2013/04/The-Tower-of-Babel.jpg"
     }
   ],
   "animals": [
     {
       "id": 1,
-      "name": "Nina"
+      "name": "Nina",
+      "image": "https://swsca-production.s3.amazonaws.com/uploads/facebook_share/None/Thing-012.jpg"
     },
     {
+      "id": 3,
       "name": "Darkness",
       "breed": "Alabama Black Snake",
-      "employeeId": 2,
-      "id": 3
+      "employeeId": 4
     },
     {
       "id": 6,
-      "name": "Jojo Biden",
+      "name": "Terrence Biden",
       "breed": "Presidential Candidate",
       "employeeId": 3
     },
@@ -56,40 +64,58 @@
       "name": "Jack",
       "breed": "Barkologist",
       "employeeId": 3,
-      "id": 7
+      "id": 7,
+      "image": "https://swsca-production.s3.amazonaws.com/uploads/facebook_share/None/Thing-012.jpg"
     },
     {
       "id": 8,
       "name": "Baxter 3",
       "breed": "Buckeye",
-      "employeeId": 1
+      "employeeId": 1,
+      "image": "https://swsca-production.s3.amazonaws.com/uploads/facebook_share/None/Thing-012.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Turbo",
+      "breed": "3 headed rattle snake",
+      "employeeId": 4
     }
   ],
   "owners": [
     {
       "id": 1,
       "name": "God",
-      "phoneNumber": "1-800-1TRUGOD"
+      "phoneNumber": "1-800-1TRUGOD",
+      "image": "https://media.npr.org/assets/img/2014/05/23/gimp-ee54e5b3c86ab254c06b88b8c67b46dda440b433-s800-c85.jpg"
     },
     {
       "id": 2,
       "name": "The Alien from the film Alien",
-      "phoneNumber": "*&#-!#$&(*-$&(*"
+      "phoneNumber": "*&#-!#$&(*-$&(*",
+      "image": "https://media.npr.org/assets/img/2014/05/23/gimp-ee54e5b3c86ab254c06b88b8c67b46dda440b433-s800-c85.jpg"
     },
     {
       "id": 3,
       "name": "Stack of children pretending to be an adult",
-      "phoneNumber": "304-555-5555"
+      "phoneNumber": "304-555-5555",
+      "image": "https://media.npr.org/assets/img/2014/05/23/gimp-ee54e5b3c86ab254c06b88b8c67b46dda440b433-s800-c85.jpg"
     },
     {
       "id": 4,
       "name": "Cardboard cut-out of acclaimed rapper Rick Ross",
-      "phoneNumber": "304-444-4444"
+      "phoneNumber": "304-444-4444",
+      "image": "https://media.npr.org/assets/img/2014/05/23/gimp-ee54e5b3c86ab254c06b88b8c67b46dda440b433-s800-c85.jpg"
     },
     {
       "name": "Cynthia Ownershmidt",
       "animalId": null,
-      "id": 5
+      "id": 5,
+      "image": "https://media.npr.org/assets/img/2014/05/23/gimp-ee54e5b3c86ab254c06b88b8c67b46dda440b433-s800-c85.jpg"
+    },
+    {
+      "name": "Johnathan Ownerheimer",
+      "animalId": 8,
+      "id": 6
     }
   ]
 }

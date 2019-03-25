@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "../animal/Animal.css"
 import { Link } from "react-router-dom";
-import Owner from "./hal_9000.png"
+import ResourceCard from "../generics/ResourceCard"
 
 export default class OwnerList extends Component {
   render() {
@@ -20,13 +20,13 @@ export default class OwnerList extends Component {
         <section className="owners">
           {this.props.owners.map(owner => (
             <div key={owner.id} className="card">
-              <div className="card-body">
-                <h5 className="card-title">
-                  <img src={Owner} className="icon--dog" />
-                  {owner.name}
-                  <Link className="nav-link" to={`/owners/${owner.id}`}>Details</Link>
-                </h5>
-              </div>
+            <div className="card-body">
+             <h5 className="card-title">
+              {owner.name}
+             <Link className="nav-link" to={`/owners/${owner.id}`}>Details</Link>
+             </h5>
+            </div>
+
             </div>
           ))}
         </section>
